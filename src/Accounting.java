@@ -23,7 +23,10 @@ public class Accounting {
             is_expense = new ArrayList<>();
             quantity = new ArrayList<>();
             sum_of_one = new ArrayList<>();
-            for(String str : Files.readAllLines(Path.of(path)))
+
+            List<String> strList = Files.readAllLines(Path.of(path));
+            strList.remove(0);
+            for(String str : strList)
             {
                 String[] strParsed = str.split(",");
                 item_name.add(strParsed[0]);
@@ -83,7 +86,10 @@ public class Accounting {
             month = new ArrayList<>();
             amount = new ArrayList<>();
             is_expense = new ArrayList<>();
-            for(String str : Files.readAllLines(Path.of(path)))
+
+            List<String> strList = Files.readAllLines(Path.of(path));
+            strList.remove(0);
+            for(String str : strList)
             {
                 String[] strParsed = str.split(",");
                 month.add(Integer.parseInt(strParsed[0]));
